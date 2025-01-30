@@ -1,0 +1,35 @@
+{% extends 'global/base.html' %}
+
+{% block content %}
+
+    <section>
+        <h2>GERADOR DE CPF e VALIDADOR </h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="conteudo">
+                <div class="generate">
+                    <input type="submit" name="generate" id="bt_gerar_cpf" value="GERAR" />
+                    <span name="">
+                        {{ post_generate }}
+                    </span>
+                </div>
+
+                
+                
+                            
+                <div class="validate">
+                    <button type="submit">VALIDAR</button>
+                    <input type="text" name="validate" id="id_validate">
+                </div>
+                    
+                
+
+            </div>
+        </form>
+        <div id="resU">
+            <p name=""> {{ post_validate }} </p>
+            
+        </div>
+    </section>
+
+{% endblock content %}
